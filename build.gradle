@@ -1,0 +1,68 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api rootProject.ext.dependencies["constraint-layout"]
+    testApi rootProject.ext.dependencies["junit"]
+    androidTestApi(rootProject.ext.dependencies["runner"]) {
+        exclude group: "com.android.support"
+    }
+    androidTestApi rootProject.ext.dependencies["espresso-core"]
+
+    //support包
+    api rootProject.ext.dependencies["appcompat-v7"]
+    api rootProject.ext.dependencies["recyclerview-v7"]
+    //工具库
+    api rootProject.ext.dependencies["utilcode"]
+    //对象存储
+    api rootProject.ext.dependencies["hawk"]
+    //EventBus消息总线
+    api rootProject.ext.dependencies["eventbus"]
+    //tab导航栏
+    api rootProject.ext.dependencies["smarttablayout"]
+    //下拉刷新控件
+    api rootProject.ext.dependencies["smartrefresh"]
+    //万能适配器
+    api rootProject.ext.dependencies["brvah-adapter"]
+    //Glide
+    api rootProject.ext.dependencies["glide"]
+    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+    //bugly
+    api rootProject.ext.dependencies["bugly-crashreport"]
+    api rootProject.ext.dependencies["bugly-nativecrashreport"]
+    //友盟
+    api rootProject.ext.dependencies["umeng-analytics"]
+    api rootProject.ext.dependencies["umeng-common"]
+    api rootProject.ext.dependencies["umeng-utdid"]
+    //OkGo网络库
+    api rootProject.ext.dependencies["okgo"]
+    //RxAndroid和RxJava
+    api(rootProject.ext.dependencies["rxandroid"]) {
+        exclude group: "io.reactivex.rxjava2", module: "rxjava"
+    }
+    api rootProject.ext.dependencies["rxjava2"]
+    //腾讯QMUI
+    api rootProject.ext.dependencies["qmui"]
+}
