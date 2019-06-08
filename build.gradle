@@ -75,4 +75,6 @@ dependencies {
     api rootProject.ext.dependencies["rxjava2"]
     //腾讯QMUI
     api rootProject.ext.dependencies["qmui"]
+    //图片放大控件
+    api rootProject.ext.dependencies["PhotoView"]
 }
