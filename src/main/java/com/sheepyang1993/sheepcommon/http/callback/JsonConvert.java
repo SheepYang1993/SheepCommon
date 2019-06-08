@@ -2,8 +2,8 @@ package com.sheepyang1993.sheepcommon.http.callback;
 
 import com.google.gson.stream.JsonReader;
 import com.lzy.okgo.convert.Converter;
-import com.sheepyang1993.hatvideo.http.response.LzyResponse;
-import com.sheepyang1993.hatvideo.http.response.SimpleResponse;
+import com.sheepyang1993.sheepcommon.http.response.LzyResponse;
+import com.sheepyang1993.sheepcommon.http.response.SimpleResponse;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
