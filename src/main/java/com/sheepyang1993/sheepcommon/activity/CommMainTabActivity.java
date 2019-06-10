@@ -41,7 +41,7 @@ public abstract class CommMainTabActivity extends BaseActivity {
         SmartTabLayout tabLayout = findViewById(R.id.tabLayout);
         mViewPager = findViewById(R.id.viewPager);
         setFragmentList(initFragment());
-        mViewPager.setOffscreenPageLimit(2);
+        mViewPager.setOffscreenPageLimit(3);
         tabLayout.setCustomTabView(R.layout.layout_tab, R.id.tvTab);
         tabLayout.setViewPager(mViewPager);
         tabLayout.setOnTabClickListener(position -> {
