@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.sheepyang1993.sheepcommon.R;
 import com.sheepyang1993.sheepcommon.utils.ListUtil;
 import com.sheepyang1993.sheepcommon.widget.Toolbar;
 
@@ -40,7 +41,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected int getToolbarId() {
-        return 0;
+        return R.id.toolbar;
     }
 
     protected void onToolbarLeftClick(View v) {

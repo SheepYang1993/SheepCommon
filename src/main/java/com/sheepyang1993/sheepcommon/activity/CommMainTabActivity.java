@@ -30,11 +30,7 @@ public abstract class CommMainTabActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
-    @Override
-    protected int getToolbarId() {
-        return R.id.toolbar;
-    }
-
+    public abstract List<Fragment> initFragment();
 
     @Override
     protected void initView() {
@@ -72,6 +68,4 @@ public abstract class CommMainTabActivity extends BaseActivity {
         mFragmentList = fragmentList;
         mViewPager.setAdapter(new MyViewPagerAdapter(getSupportFragmentManager(), mFragmentList));
     }
-
-    public abstract List<Fragment> initFragment();
 }

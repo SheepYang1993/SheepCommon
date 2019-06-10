@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:id="@+id/llToolbar"
-              android:layout_width="match_parent"
-              android:layout_height="?android:actionBarSize"
-              android:background="@color/CommonC01"
-              android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llToolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?android:actionBarSize"
+    android:background="@color/CommonC01"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:layout_width="55dp"
             android:layout_height="match_parent"
             android:padding="15dp"
-            android:src="@drawable/icon_left"/>
+            android:src="@drawable/icon_left" />
 
         <TextView
             android:id="@+id/tvToolbarTitle"
@@ -29,16 +29,24 @@
             android:singleLine="true"
             android:textColor="@color/CommonC02"
             android:textSize="@dimen/CommonSP18"
-            tools:text="标题"/>
+            tools:text="标题" />
 
         <ImageView
+            android:id="@+id/ivToolbarRight"
             android:layout_width="55dp"
             android:layout_height="match_parent"
-            android:padding="12dp"/>
+            android:padding="12dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvToolbarRight"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:padding="12dp" />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/CommonC03"/>
+        android:background="@color/CommonC03" />
 </LinearLayout>

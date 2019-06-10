@@ -23,11 +23,6 @@ public class PhotoViewActivity extends BaseActivity {
     }
 
     @Override
-    protected int getToolbarId() {
-        return R.id.toolbar;
-    }
-
-    @Override
     protected void initView() {
         photoView = findViewById(R.id.photoView);
     }
