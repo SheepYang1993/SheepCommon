@@ -20,7 +20,7 @@ import java.util.List;
  * 通用的主页框架
  * 三个tab
  */
-public abstract class CommMainTabActivity extends BaseActivity {
+public abstract class BaseTabActivity extends BaseActivity {
     private long mExitTime;
     private List<Fragment> mFragmentList;
     private ViewPager mViewPager;
