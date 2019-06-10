@@ -46,9 +46,15 @@ dependencies {
     api rootProject.ext.dependencies["appcompat-v7"]
     api rootProject.ext.dependencies["recyclerview-v7"]
     //工具库
-    api rootProject.ext.dependencies["utilcode"]
+    api(rootProject.ext.dependencies["utilcode"]) {
+        exclude group: "com.google.code.gson", module: "gson"
+    }
     //对象存储
-    api rootProject.ext.dependencies["hawk"]
+    api(rootProject.ext.dependencies["hawk"]) {
+        exclude group: "com.google.code.gson", module: "gson"
+    }
+    //Json数据解析
+    api rootProject.ext.dependencies["gson"]
     //EventBus消息总线
     api rootProject.ext.dependencies["eventbus"]
     //tab导航栏
@@ -68,7 +74,12 @@ dependencies {
     api rootProject.ext.dependencies["umeng-common"]
     api rootProject.ext.dependencies["umeng-utdid"]
     //OkGo网络库
-    api rootProject.ext.dependencies["okgo"]
+    api(rootProject.ext.dependencies["okgo"]) {
+        exclude group: "com.squareup.okhttp3", module: "okhttp"
+        exclude group: "com.squareup.okio", module: "okio"
+    }
+    api rootProject.ext.dependencies["okhttp"]
+    api rootProject.ext.dependencies["okio"]
     //RxAndroid和RxJava
     api(rootProject.ext.dependencies["rxandroid"]) {
         exclude group: "io.reactivex.rxjava2", module: "rxjava"

@@ -40,6 +40,13 @@ public abstract class BaseFragment extends Fragment {
     }
 
     /**
+     * 设置界面布局id
+     *
+     * @return
+     */
+    public abstract int getLayoutId();
+
+    /**
      * 初始化界面布局
      */
     protected abstract void initView(View view);
@@ -48,11 +55,4 @@ public abstract class BaseFragment extends Fragment {
      * 初始化界面数据
      */
     protected abstract void initData();
-
-    /**
-     * 设置界面布局id
-     *
-     * @return
-     */
-    public abstract int getLayoutId();
 }
