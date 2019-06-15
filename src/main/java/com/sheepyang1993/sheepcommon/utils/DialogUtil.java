@@ -113,7 +113,7 @@ public class DialogUtil {
                     runnable.run();
                 }
             }
-        }, 1500);
+        }, 800);
     }
 
     private void dismissDialog(Activity activity) {
