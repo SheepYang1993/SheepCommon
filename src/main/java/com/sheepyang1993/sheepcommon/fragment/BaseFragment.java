@@ -66,6 +66,9 @@ public abstract class BaseFragment extends Fragment {
     protected abstract void initData();
 
     public void putDisposable(Disposable disposable) {
+        if (mDisposableList == null) {
+            mDisposableList = new ArrayList<>();
+        }
         mDisposableList.add(disposable);
     }
 
