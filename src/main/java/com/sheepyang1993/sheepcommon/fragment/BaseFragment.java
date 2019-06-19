@@ -72,6 +72,10 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        clearDisposable();
+    }
+
+    public void clearDisposable() {
         if (ListUtil.isNotEmpty(mDisposableList)) {
             for (Disposable disposable : mDisposableList) {
                 if (!disposable.isDisposed()) {
