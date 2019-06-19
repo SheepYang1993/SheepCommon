@@ -68,4 +68,8 @@ public abstract class BaseTabActivity extends BaseActivity {
         mFragmentList = fragmentList;
         mViewPager.setAdapter(new MyViewPagerAdapter(getSupportFragmentManager(), mFragmentList));
     }
+
+    public List<Fragment> getFragmentList() {
+        return mFragmentList;
+    }
 }

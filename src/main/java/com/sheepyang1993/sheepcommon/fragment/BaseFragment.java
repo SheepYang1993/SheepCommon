@@ -8,6 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.sheepyang1993.sheepcommon.utils.ListUtil;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
+import io.reactivex.disposables.Disposable;
+
 /**
  * @author SheepYang
  * @Email 332594623@qq.com
@@ -16,6 +24,7 @@ import android.view.ViewGroup;
 public abstract class BaseFragment extends Fragment {
     public static final String EXTRA_TITLE = "EXTRA_TITLE";
     private View rootView;
+    private List<Disposable> mDisposableList = new ArrayList<>();
 
     @Nullable
     @Override
@@ -55,4 +64,22 @@ public abstract class BaseFragment extends Fragment {
      * 初始化界面数据
      */
     protected abstract void initData();
+
+    public void putDisposable(Disposable disposable) {
+        mDisposableList.add(disposable);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (ListUtil.isNotEmpty(mDisposableList)) {
+            for (Disposable disposable : mDisposableList) {
+                if (!disposable.isDisposed()) {
+                    disposable.dispose();
+                }
+            }
+            mDisposableList.clear();
+            mDisposableList = null;
+        }
+    }
 }
