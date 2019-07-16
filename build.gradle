@@ -89,4 +89,6 @@ dependencies {
     api rootProject.ext.dependencies["qmui"]
     //图片放大控件
     api rootProject.ext.dependencies["PhotoView"]
+    //崩溃捕获
+    api 'cat.ereza:customactivityoncrash:2.2.0'
 }
