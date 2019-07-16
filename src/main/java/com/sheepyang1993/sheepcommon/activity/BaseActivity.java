@@ -9,6 +9,8 @@ import com.sheepyang1993.sheepcommon.R;
 import com.sheepyang1993.sheepcommon.utils.ListUtil;
 import com.sheepyang1993.sheepcommon.widget.Toolbar;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,10 +26,22 @@ public abstract class BaseActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private List<Disposable> mDisposableList = new ArrayList<>();
 
+    /**
+     * 是否使用EventBus
+     *
+     * @return
+     */
+    protected boolean useEventBus() {
+        return false;
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
+        if (useEventBus()) {
+            EventBus.getDefault().register(this);
+        }
         initToolbar();
         initView();
         initData();
@@ -93,6 +107,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (useEventBus()) {
+            EventBus.getDefault().unregister(this);
+        }
         clearDisposable();
     }
 }
