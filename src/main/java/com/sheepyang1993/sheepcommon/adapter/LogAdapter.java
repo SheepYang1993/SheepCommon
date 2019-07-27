@@ -16,7 +16,7 @@ import java.util.Locale;
  * @date 2019/7/27
  */
 public class LogAdapter extends BaseQuickAdapter<LogModel, BaseViewHolder> {
-    private DateFormat mFormat = new SimpleDateFormat("yyyy-dd-MM\nHH:mm:ss", Locale.getDefault());
+    private DateFormat mFormat = new SimpleDateFormat("HH:mm:ss SSS", Locale.getDefault());
 
     public LogAdapter() {
         super(R.layout.item_log);

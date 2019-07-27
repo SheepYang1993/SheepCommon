@@ -20,8 +20,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/CommonC06"
-            android:textSize="12sp"
-            tools:text="11-11\n10:22:22"/>
+            android:textSize="9sp"
+            tools:text="10:22:22 222"/>
 
         <TextView
             android:id="@+id/tvTag"
@@ -30,6 +30,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:textColor="@color/CommonC07"
+            android:textSize="9sp"
             tools:text="标签"/>
 
         <TextView
@@ -38,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/CommonC02"
+            android:textSize="9sp"
             tools:text="日志信息日志信息日志信息日志信息日志信息日志信息日志信息日志信息日志信息日志信息日志信息日志信息日志信息日志信息日志信息日志信息日志信息日志信息"/>
     </LinearLayout>
 
