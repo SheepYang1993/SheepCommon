@@ -2,6 +2,9 @@ package com.sheepyang1993.sheepcommon.utils;
 
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author SheepYang
  * @email 332594623@qq.com
@@ -9,6 +12,7 @@ import android.util.Log;
  * @describe 日志工具类
  */
 public class LogUtil {
+    private static List<OnLogListener> mLogListenerList = new ArrayList<>();
 
     public static void v(String tag, String msg) {
         v(tag, msg, false);
@@ -18,14 +22,27 @@ public class LogUtil {
         if (showStackTrace) {
             vStackTrace(tag, msg);
         } else {
-            Log.v(tag, msg);
+            vRealLog(tag, msg);
         }
     }
 
     private static void vStackTrace(String tag, String msg) {
         for (int i = 0; i < Thread.currentThread().getStackTrace().length; i++) {
             String realContent = getContent(msg, i);
-            Log.v(tag, realContent);
+            vRealLog(tag, realContent);
+        }
+    }
+
+    private static void vRealLog(String tag, String msg) {
+        dispatchListener(tag, msg);
+        Log.v(tag, msg);
+    }
+
+    private static void dispatchListener(String tag, String msg) {
+        if (ListUtil.isNotEmpty(mLogListenerList)) {
+            for (OnLogListener onLogListener : mLogListenerList) {
+                onLogListener.v(tag, msg);
+            }
         }
     }
 
@@ -46,5 +63,13 @@ public class LogUtil {
         } catch (Throwable throwable) {
             return msg;
         }
+    }
+
+    public interface OnLogListener {
+        void v(String tag, String msg);
+    }
+
+    public static void addListener(OnLogListener listener) {
+        mLogListenerList.add(listener);
     }
 }
