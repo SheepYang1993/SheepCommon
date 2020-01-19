@@ -7,6 +7,7 @@ import android.os.Bundle;
 import com.blankj.utilcode.util.Utils;
 import com.lzy.okgo.OkGo;
 import com.orhanobut.hawk.Hawk;
+import com.sheepyang1993.sheepcommon.utils.umeng.UmengUtil;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
@@ -109,5 +110,6 @@ public class SheepCommon {
          */
         UMConfigure.setEncryptEnabled(true);
         registerUmengActivityLifecycle(app);
+        UmengUtil.init(app);
     }
 }
